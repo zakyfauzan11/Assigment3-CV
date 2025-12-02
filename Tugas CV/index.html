@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nama Lengkap — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #98a0b3;
+      --accent: #57b6ff;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#071024 0%, #0b1220 100%);-webkit-font-smoothing:antialiased}
+    .container{max-width:1000px;margin:32px auto;padding:28px;display:grid;grid-template-columns:320px 1fr;gap:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:16px;padding:20px;box-shadow:0 6px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .profile{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .avatar{width:120px;height:120px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#9be7ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 20px rgba(5,20,40,0.6);overflow:hidden}
+    /* new: ensure img fits avatar box */
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:22px;margin:12px 0 4px}
+    p.lead{color:var(--muted);margin:0 0 12px;font-size:13px}
+    .contact{width:100%;margin-top:10px}
+    .contact li{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;color:var(--muted);font-size:13px}
+    .section{margin-bottom:18px}
+    .section h3{font-size:13px;margin:0 0 10px;color:#dff3ff}
+    .skill{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+    .main .header{display:flex;align-items:center;justify-content:space-between}
+    .main h2{margin:0;font-size:20px}
+    .summary{background:linear-gradient(180deg, rgba(87,182,255,0.06), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+    .experience-item{padding:12px;border-radius:10px;margin-bottom:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+    .experience-item h4{margin:0;font-size:15px}
+    .meta{color:var(--muted);font-size:13px;margin-top:6px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02)}
+    .actions{display:flex;gap:10px}
+    .btn{background:var(--accent);color:#002433;padding:10px 12px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)}
+    footer.note{color:var(--muted);font-size:13px;text-align:center;margin-top:18px}
+    @media (max-width:880px){.container{grid-template-columns:1fr;padding:18px}.avatar{width:100px;height:100px}}
+    /* small animations */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp .6s forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="card">
+      <div class="profile fade-up" style="animation-delay:.05s">
+        <div class="avatar" id="avatar">
+          <img id="avatarImg" src="foto.jpg" alt="Foto Profil">
+        </div>
+
+        <h1 id="name">Zaky Fauzan</h1>
+        <p class="lead" id="title">Data Analyst • Data Science</p>
+        <p class="lead" id="location">Jakarta, Indonesia</p>
+      </div>
+
+      <div class="section">
+        <h3>Kontak</h3>
+        <ul class="contact">
+          <li id="email">✉️ Zakyfauzana123@gmail.com</li>
+          <li id="phone">📱 +62 813 16689028</li>
+          <li id="links">🔗 linkedin.com/in/ZakyFauzan11</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Skill</h3>
+        <div class="skill" id="skills">
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Mcrosoft Office</span>
+          <span class="pill">Data Visualization</span>
+          <span class="pill">Exploratory Data Analysis</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Pendidikan</h3>
+        <div class="meta">
+          <strong id="edu-school">Universitas muhammadiyah malang </strong><br>
+          <span id="edu-degree">S1 — Teknik Informatika, 2023</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Sertifikat</h3>
+        <div class="skill" id="certs">
+          <span class="pill">SQL for Data Analysis — Google Data Analytics (Coursera)</span>
+          <span class="pill">Python for Data Science — IBM</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="main card fade-up" style="animation-delay:.1s">
+      <div class="header">
+        <h2>Ringkasan</h2>
+        <div class="actions">
+          <button class="btn" id="downloadBtn">Download PDF</button>
+          <button class="btn ghost" id="printBtn">Print</button>
+        </div>
+      </div>
+      <div class="summary" id="summary">Seorang Data Analyst dengan kemampuan melakukan data cleaning, analisis eksploratif (EDA), serta membuat visualisasi dan laporan berbasis data menggunakan SQL, Python, dan tools spreadsheet.</div>
+
+      <div class="section">
+        <h3>Pengalaman Kerja</h3>
+        <div id="experience">
+          <div class="experience-item">
+            <h4>PT. Saliza — Data analys</h4>
+            <div class="meta">2024 — Sekarang • Melakukan data cleaning, exploratory data analysis (EDA), dan pembuatan dashboard untuk membantu tim melihat pola dan tren bisnis.</div>
+          </div>
+          <div class="experience-item">
+            <h4>Startup XYZ — Data Science</h4>
+            <div class="meta">2024 — 2025 • Mendukung pekerjaan data science dengan melakukan preprocessing data, exploratory data analysis (EDA), serta membuat model sederhana menggunakan Python.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Proyek Pilihan</h3>
+        <div class="projects" id="projects">
+          <div class="project">
+            <strong>Portfolio Site</strong>
+            <div class="meta">“Membangun situs portofolio untuk menampilkan proyek analisis data, visualisasi, dan hasil eksplorasi dataset; di-deploy menggunakan Netlify.”</div>
+          </div>
+          <div class="project">
+            <strong>App To-Do</strong>
+            <div class="meta">Aplikasi analisis data dengan dukungan offline, mencakup data preprocessing, perhitungan statistik dasar, dan visualisasi ringan.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Bahasa & Lainnya</h3>
+        <div class="meta">Bahasa: Indonesia (native), Inggris (menengah).</div>
+      </div>
+
+      <footer class="note">Created by Zaky Fauzan • Data Analyst Portfolio</footer>
+    </main>
+  </div>
+
+  <script>
+    // Small helper to personalize quickly (edit values here)
+    const profile = {
+      name: 'Zaky Fauzan',
+      title: 'Mahasiswa',
+      location: 'Jakarta, Indonesia',
+      email: 'zakyfauzana123@gmail.com',
+      phone: '+62 813 1668 9028',
+      links: 'linkedin.com/in/username • github.com/ZakyFauzan11',
+      skills: ['SQL','Python','Microsoft Office','Data Entry'],
+      education: {school: 'Universitas Muhammadiyah Malang', degree: 'S1 — Teknik Informatika, 2023'},
+      certs: ['Google Data Analytics — Coursera','Python for Data Science — IBM'],
+      summary: 'Mahasiswa berminat pada analisis data dan otomasi proses. Terampil menggunakan SQL dan Python untuk pengolahan data serta Microsoft Office untuk pelaporan dan entri data.',
+      photo: 'foto.jpg' // <-- taruh file foto.jpg di folder yang sama dengan index.html; ubah nama file jika perlu
+    }
+
+    document.getElementById('name').textContent = profile.name;
+    document.getElementById('title').textContent = profile.title;
+    document.getElementById('location').textContent = profile.location;
+    document.getElementById('email').textContent = '✉️ ' + profile.email;
+    document.getElementById('phone').textContent = '📱 ' + profile.phone;
+    document.getElementById('links').textContent = '🔗 ' + profile.links;
+    document.getElementById('summary').textContent = profile.summary;
+    document.getElementById('edu-school').textContent = profile.education.school;
+    document.getElementById('edu-degree').textContent = profile.education.degree;
+
+    // populate skills
+    const skillsEl = document.getElementById('skills');
+    skillsEl.innerHTML = '';
+    profile.skills.forEach(s => { const sp = document.createElement('span'); sp.className='pill'; sp.textContent=s; skillsEl.appendChild(sp); });
+
+    // certs
+    const certsEl = document.getElementById('certs'); certsEl.innerHTML=''; profile.certs.forEach(c=>{const sp=document.createElement('span');sp.className='pill';sp.textContent=c;certsEl.appendChild(sp);});
+
+    // avatar image handling: show photo if profile.photo set, otherwise show initials
+    const avatar = document.getElementById('avatar');
+    const avatarImg = document.getElementById('avatarImg');
+
+    if (profile.photo && profile.photo.trim() !== '') {
+      // set sebagai img src dan tampilkan
+      avatarImg.src = profile.photo;
+      avatarImg.alt = profile.name + ' — Foto Profil';
+      avatarImg.style.display = 'block';
+      // clear any text content in avatar container
+      avatar.innerHTML = '';
+avatar.appendChild(avatarImg);
+
+    } else {
+      // fallback: inisial
+      avatarImg.style.display = 'none';
+      const initials = profile.name.split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase();
+      avatar.textContent = initials;
+      avatar.style.background = 'linear-gradient(135deg,var(--accent),#9be7ff)';
+    }
+
+    // Print/download handlers
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+    document.getElementById('downloadBtn').addEventListener('click', ()=> window.print());
+
+    // small touch: enable keyboard 'e' to edit the profile object inline for quick demo
+    window.addEventListener('keydown', (e)=>{
+      if(e.key==='e' && (e.ctrlKey||e.metaKey)){
+        const newName = prompt('Ganti nama:', profile.name);
+        if(newName){ profile.name=newName; document.getElementById('name').textContent=newName; const initials=newName.split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase(); avatar.textContent=initials; }
+      }
+    });
+  </script>
+
+</body>
+</html>
